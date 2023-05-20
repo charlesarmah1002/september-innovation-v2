@@ -91,10 +91,22 @@ body {
         display: block;
         background-color: white;
         height: 2px;
-        width: 30px;
+        width: 28px;
         margin: 6px auto;
         transition: 0.4s;
         border-radius: 10px;
+    }
+
+    .menu-toggle.toggle-active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.toggle-active .bar:nth-child(1) {
+        transform: rotate(45deg) translateY(11px);
+    }
+
+    .menu-toggle.toggle-active .bar:nth-child(3) {
+        transform: rotate(-45deg) translateY(-11px);
     }
 
     .menu {
@@ -114,6 +126,12 @@ body {
         font-weight: 500;
         opacity: 0;
         pointer-events: none;
+        transition: 0.3s;
+    }
+
+    .menu-active {
+        opacity: 1;
+        pointer-events: all;
     }
 
     .menu-item {
@@ -127,6 +145,11 @@ body {
         text-decoration: none;
         height: 100%;
         width: 100%;
+        transition: 0.3s;
+    }
+
+    .menu-link:hover {
+        color: #FF9C00;
     }
 
     .hero {
@@ -144,6 +167,21 @@ body {
         align-items: center;
         justify-content: center;
         padding: 20px 0;
+    }
+
+    .hero .side.left {
+        width: 50%;
+        max-width: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+    }
+
+    .hero .side.left .image-container img {
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
     }
 
     .hero .side.right {
@@ -252,7 +290,7 @@ body {
         justify-content: center;
     }
 
-    #about .container .side.us .container {
+    #about .container .side.us .inner-container {
         text-align: center;
         width: 100%;
         height: 100%;
@@ -263,7 +301,7 @@ body {
         justify-content: space-evenly;
     }
 
-    #about .container .side.us .container .buttons .btn {
+    #about .container .side.us .inner-container .buttons .btn {
         padding: 6px 10px;
         background: white;
         border: 1px solid white;
@@ -276,7 +314,7 @@ body {
         transition: 0.3s;
     }
 
-    #about .container .side.us .container .buttons .btn:hover {
+    #about .container .side.us .inner-container .buttons .btn:hover {
         color: white;
         border: 1px solid white;
         background: transparent;
@@ -302,7 +340,7 @@ body {
         width: 100%;
         overflow-x: scroll;
     }
-
+    
     #services::-webkit-scrollbar {
         background: transparent;
         height: 8px;
@@ -344,6 +382,7 @@ body {
         display: flex;
         align-items: center;
         padding: 30px 0;
+        color: #552070;
     }
 
     #feedback .container .comment {
@@ -485,10 +524,12 @@ body {
 
     input[type=submit] {
         background: green;
-        border: none;
         color: white;
         width: 100px !important;
         margin: auto;
+        border: green !important;
+        border-radius: 4px;
+        cursor: pointer;
     }
 
     textarea {
@@ -506,7 +547,7 @@ body {
     }
 }
 
-@media (max-width: 415px) {
+@media (max-width: 530px) {
     section#hero {
         animation: none;
         background-size: cover;
@@ -519,6 +560,7 @@ body {
         align-items: center;
         justify-content: center;
         width: 100%;
+        font-size: 16px;
     }
 
     #container {
@@ -529,7 +571,7 @@ body {
     }
 
     #hero {
-        background: url(../assets/background_image1.jpg);
+        background: url(../assets/starbackground-purple.jpg);
         background-size: cover;
         background-position: bottom;
         height: 700px;
@@ -540,7 +582,7 @@ body {
         align-items: center;
         justify-content: space-between;
         color: white;
-        padding: 0 30px;
+        padding: 0 20px;
         height: 70px;
     }
 
@@ -553,7 +595,7 @@ body {
     .primary-navigation .menu .menu-item {
         list-style: none;
     }
-    
+
     .primary-navigation .menu .menu-item .menu-link {
         padding: 6px 10px;
         text-transform: capitalize;
@@ -585,16 +627,258 @@ body {
         padding: 40px 0;
     }
 
-    .hero .side.left .image-container{
+    .hero .side.left .image-container {
         width: 30%;
-        background: black;
-        margin: auto;
-        border-radius: 50%;
+        background: white;
+        margin: 20px auto;
+        height: fit-content;
+        /* border-radius: 50%; */
     }
 
     .hero .side.left .image-container img {
         width: 100% !important;
         object-fit: cover;
         object-position: center;
+    }
+
+    .hero .side.right {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        font-size: 16px;
+    }
+
+    .side.right .tag {
+        margin-top: 10px;
+        margin-bottom: 20px;
+        font-family: secular one;
+        font-size: 2rem;
+    }
+
+    .side.right .media-links a {
+        text-decoration: none;
+        padding: 10px;
+        margin-bottom: 20px;
+        transition: 0.3s;
+        border-radius: 5px;
+        font-size: 1.4rem;
+    }
+
+    .side.right .media-links a:hover {
+        background: white;
+        color: #552070;
+    }
+
+    .lm-btn {
+        text-transform: capitalize;
+        text-decoration: none;
+        padding: 7px 10px;
+        margin: 5px;
+        background: white;
+        color: #552070;
+        border-radius: 5px;
+        font-weight: 500;
+        border: 2px solid white;
+        transition: 0.3s;
+    }
+
+    .lm-btn:hover {
+        background: #552070;
+        color: white;
+    }
+
+    #services {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 20px 0;
+    }
+
+    #services .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    #services .container .service {
+        width: 270px;
+        height: 100px;
+        /* border: 2px solid; */
+        margin: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #55207090;
+        border-radius: 7px;
+        position: relative;
+    }
+
+    #services .container .service a {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        text-transform: capitalize;
+    }
+
+    #featured {
+        padding: 40px 10px;
+    }
+
+    #featured .container h1 {
+        font-size: 2rem;
+        font-weight: 500;
+        color: #552070;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    #featured .container .gallery-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 70%;
+        margin: auto;
+    }
+
+    #featured .container .gallery-container .image-container {
+        width: 250px;
+        height: 250px;
+        overflow: hidden;
+        margin: 10px;
+        position: relative;
+        border-radius: 7px;
+    }
+
+    #featured .container .gallery-container .image-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    #featured .container .gallery-container .image-container a {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        color: white;
+        font-weight: 500;
+        font-size: 1.4rem;
+        opacity: 0;
+        transition: 0.3s;
+    }
+
+    #featured .container .gallery-container .image-container:hover a {
+        opacity: 1;
+    }
+
+    #feedback {
+        padding: 20px;
+        width: 100%;
+        background: #e0dddd;
+        height: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #552070;
+    }
+
+    #feedback .container {
+        width: 90%;
+        max-width: 500px;
+        text-align: center;
+    }
+
+    #feedback .container .comment h1 {
+        font-family: dancing script;
+        font-size: 2rem;
+        margin: 3px;
+        font-weight: 600;
+    }
+
+    #feedback .container .comment p {
+        margin: 5px;
+    }
+
+    #call {
+        height: 250px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #call .container {
+        width: 100%;
+        max-width: 700px;
+        text-align: center;
+    }
+
+    #call .container h2 {
+        margin: 20px;
+    }
+
+    #about {
+        background: #552070;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 30px;
+    }
+
+    #about .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 70%;
+    }
+
+    #about .container .side {
+        width: 50%;
+    }
+
+    #about .container .side .inner-container {
+        text-align: center;
+    }
+
+    #about .container .side .inner-container .buttons .btn {
+        padding: 7px 10px;
+        background: white;
+        color: #552070;
+        border-radius: 4px;
+        border: 2px solid white;
+        text-transform: capitalize;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+
+    #about .container .side .inner-container .buttons .btn:hover {
+        background: transparent;
+        color: white;
+    }
+
+    #about .container .side .image-container {
+        width: 100%;
+        max-width: 270px;
+        overflow: hidden;
+    }
+
+    #about .container .side .image-container img {
+        width: 100%;
     }
 }
