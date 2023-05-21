@@ -881,4 +881,88 @@ body {
     #about .container .side .image-container img {
         width: 100%;
     }
+
+    #contact {
+        min-height: 250px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+    #contact .container {
+        width: 100%;
+        padding: 20px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    #contact .container h1 {
+        text-transform: uppercase;
+        border-bottom: 1px solid;
+        margin-bottom: 10px;
+        font-size: 2rem;
+        font-weight: 400;
+        color: #552070;
+    }
+
+    #contact .container .field {
+        /* margin: 10px auto; */
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        max-width: 400px;
+        text-align: left;
+    }
+
+    #contact .container .field label {
+        text-transform: uppercase;
+    }
+
+    #contact .container .field input {
+        width: 100%;
+        height: 30px;
+        padding: 0 10px;
+        font-family: montserrat;
+        outline: none;
+        border: 1px solid #552070;
+        margin-top: 3px;
+    }
+
+    #contact form {
+        margin: 20px 0;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    input[type=submit] {
+        background: green;
+        color: white;
+        width: 100px !important;
+        margin: auto;
+        border: green !important;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    textarea {
+        padding: 10px;
+        font-family: montserrat;
+        width: 100%;
+        outline: none;
+        border: 1px solid #552070;
+        margin-top: 3px;
+    }
+    
+    footer {
+        height: 300px;
+        background: #e0dddd;
+    }
 }
