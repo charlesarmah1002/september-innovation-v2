@@ -7,6 +7,14 @@ a {
     color: inherit;
 }
 
+@font-face {
+    font-family: Anthony hunter;
+    src: url('../assets/fonts/Anthony\ Hunter.ttf');
+}
+@font-face {
+    font-family: Keep Calm;
+    src: url('../assets/fonts/KeepCalm-Medium.ttf');
+}
 
 hr {
     margin: 10px auto;
